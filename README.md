@@ -16,3 +16,19 @@ for i in a:
   a.append(i+Counting)
   Counting+=i
 ```
+c++のコード：
+```cpp
+#include <iostream>
+
+int main() {
+  int l=3;
+  int a[100] = {1, 2, 3};
+  int b[100];
+  int Counting = 0;
+  for(int i; i<l; i++) {
+    b[i]=a[i]+Counting;
+    Counting+=a[i];
+  }
+  return 1;
+}
+```
