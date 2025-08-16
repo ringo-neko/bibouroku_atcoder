@@ -67,7 +67,7 @@ pythonだとbisectが便利すぎる。
 
 **重要度 80**
 
-*タグ:合計,切り替え,sum,リスト*
+*タグ:リスト,search,サーチ,bisect,found,見つける*
 
 pythonのコード(bisect)：
 ```python
