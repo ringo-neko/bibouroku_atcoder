@@ -34,6 +34,6 @@ int main() {
   }
   // --- Example --- //
   printf("%d\n", b[2]-b[0]);
-  return 1;
+  return 0;
 }
 ```
