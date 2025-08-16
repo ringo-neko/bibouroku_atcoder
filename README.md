@@ -11,9 +11,10 @@ b<sub>n</sub> = b<sub>n-1</sub> + a<sub>n</sub>
 pythonのコード：
 ```python
 a=[1,2,3]
+b=[]
 Counting=0
 for i in a:
-  a.append(i+Counting)
+  b.append(i+Counting)
   Counting+=i
 ```
 c++のコード：
