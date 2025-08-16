@@ -16,6 +16,8 @@ Counting=0
 for i in a:
   b.append(i+Counting)
   Counting+=i
+# --- Example --- #
+print(b[2]-b[0])
 ```
 c++のコード：
 ```cpp
@@ -30,6 +32,8 @@ int main() {
     b[i]=a[i]+Counting;
     Counting+=a[i];
   }
+  // --- Example --- //
+  printf("%d\n", b[2]-b[0])
   return 1;
 }
 ```
