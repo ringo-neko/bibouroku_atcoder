@@ -28,7 +28,7 @@ int main() {
   int a[100] = {1, 2, 3};
   int b[100];
   int Counting = 0;
-  for(int i; i<l; i++) {
+  for(int i=0; i<l; i++) {
     b[i]=a[i]+Counting;
     Counting+=a[i];
   }
