@@ -10,5 +10,9 @@ b<sub>n</sub> = b<sub>n-1</sub> + a<sub>n</sub>
 
 pythonのコード：
 ```python
-writeing...
+a=[1,2,3]
+Counting=0
+for i in a:
+  a.append(i+Counting)
+  Counting+=i
 ```
