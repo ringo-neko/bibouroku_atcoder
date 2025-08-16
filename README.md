@@ -33,7 +33,7 @@ int main() {
     Counting+=a[i];
   }
   // --- Example --- //
-  printf("%d\n", b[2]-b[0])
+  printf("%d\n", b[2]-b[0]);
   return 1;
 }
 ```
