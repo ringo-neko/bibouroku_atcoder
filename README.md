@@ -122,3 +122,54 @@ int main() {
   printf("%d\n", search({0, 1, 3, 5}, 4));
 }
 ```
+
+# Union Find
+
+くっつけたりできるやつ。
+pythonのコード：
+```
+class UnionFind:
+    def __init__(self, n):
+        self.parent = list(range(n))
+        self.size = [1] * n
+        self.groupsnum = n
+
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])  # 経路圧縮
+        return self.parent[x]
+
+    def unite(self, x, y):
+        x_root = self.find(x)
+        y_root = self.find(y)
+        if x_root == y_root:
+            return
+        if self.size[x_root] < self.size[y_root]:
+            x_root, y_root = y_root, x_root
+        self.parent[y_root] = x_root
+        self.size[x_root] += self.size[y_root]
+        self.groupsnum -= 1
+
+    def issame(self, x, y):
+        return self.find(x) == self.find(y)
+
+    def __str__(self):
+        from collections import defaultdict
+        groups = defaultdict(list)
+        for i in range(len(self.parent)):
+            groups[self.find(i)].append(i)
+        return "\n".join(map(str, groups.values())) + f"\n{self.groupsnum} groups found."
+```
+***C++のコード(ATCODERでしか使えない)***
+C++のコード：
+```
+#include <iostream>
+#include "atcoder/dsu.hpp"
+int main() {
+  atcoder::dsu uf(2);
+  printf("%d\n",uf.same(0, 1)); // 0
+  uf.merge(0, 1);
+  printf("%d\n",uf.same(0, 1)); // 1
+  return 0;
+}
+```
