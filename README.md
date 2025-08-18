@@ -227,7 +227,6 @@ C++のコード
 #include <vector>
 #include <queue>
 
-// グラフを表す隣接リスト
 using AdjacencyList = std::vector<std::vector<int>>;
 
 class BFS {
