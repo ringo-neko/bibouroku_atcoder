@@ -223,5 +223,57 @@ print(b.bfs())
 
 C++のコード
 ```cpp
-/*Sorry! writing...*/
+#include <iostream>
+#include <vector>
+#include <queue>
+
+// グラフを表す隣接リスト
+using AdjacencyList = std::vector<std::vector<int>>;
+
+class BFS {
+private:
+    AdjacencyList ways;
+    int cantcross;
+
+public:
+    BFS(AdjacencyList& adjList, int unreachableValue = -1) : ways(adjList), cantcross(unreachableValue) {}
+    std::vector<int> bfs(int startNode = 0) {
+        int numNodes = ways.size();
+        std::vector<int> distance(numNodes, cantcross);
+        std::queue<int> q;
+        distance[startNode] = 0;
+        q.push(startNode);
+        while (!q.empty()) {
+            int currentNode = q.front();
+            q.pop();
+            for (int neighbor : ways[currentNode]) {
+                if (distance[neighbor] == cantcross) {
+                    distance[neighbor] = distance[currentNode] + 1;
+                    q.push(neighbor);
+                }
+                else {
+                    int newDistance = distance[currentNode] + 1;
+                    if (newDistance < distance[neighbor]) {
+                        distance[neighbor] = newDistance;
+                        q.push(neighbor);
+                    }
+                }
+            }
+        }
+        return distance;
+    }
+};
+
+int main() {
+    std::vector<std::vector<int>> ways = {{1, 2}, {0}, {0, 3}, {2}, {5, 4}, {4, 6}, {5}};
+    BFS my_bfs(ways);
+    std::vector<int> result = my_bfs.bfs();
+
+    for (int dist : result) {
+        std::cout << dist << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}
 ```
