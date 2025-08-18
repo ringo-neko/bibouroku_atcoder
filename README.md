@@ -184,3 +184,66 @@ int main() {
   return 0;
 }
 ```
+
+# bfs
+
+***重要度 100***
+
+*タグ:迷路,木,経路*
+
+pythonのコード:
+```python
+class bfs():
+  def __init__(self, ways:list, costmode=False, cantcross=None):
+    """
+    if costmode False:
+    ways like...
+    [[1], [0, 3], [3], [1, 2, 4], [3]]
+    if costmode True:
+    ways like...
+    [[[1, 1]], [[0, 2], [3, 2]], [[3, 3]], [[1, 4], [2, 4], [4, 4]], [[3, 5]]]
+
+    cantcross changes like -1, None(default), ".", "#"
+    """
+    self.ways=ways
+    self.costmode=costmode
+    self.cantcross=cantcross
+  def bfs(self, startfrom=0):
+    from collections import deque
+    distance = [self.cantcross for i in range(len(self.ways))]
+    distance[startfrom]=0
+    if self.costmode:
+      queue = deque([[startfrom,0]])
+      while len(queue)!=0:
+        value=queue.popleft()
+        for i in self.ways[value[0]]:
+          if distance[i[0]] is None:
+            distance[i[0]]=distance[value[0]]+i[1]
+            queue.append(i)
+          else:
+            gocost=distance[value[0]]+i[1]
+            if distance[i[0]]>gocost:
+              distance[i[0]]=gocost
+              queue.append(i)
+    else:
+      queue = deque([startfrom])
+      while len(queue)!=0:
+        value=queue.popleft()
+        for i in self.ways[value]:
+          if distance[i] is None:
+            distance[i]=distance[value]+1
+            queue.append(i)
+          else:
+            gocost=distance[value]+1
+            if distance[i]>gocost:
+              distance[i]=gocost
+              queue.append(i)
+    return distance
+b=bfs([[1, 2], [0], [0, 3], [2], [5, 4], [4, 6], [5]])
+print(b.bfs())
+```
+
+C++のコード
+```cpp
+/*Sorry! writing...*/
+```
