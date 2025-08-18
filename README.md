@@ -112,6 +112,11 @@ int main() {
 # Union Find
 
 くっつけたりできるやつ。
+
+**重要度 95**
+
+*タグ:くっつける,合体,マージ*
+
 pythonのコード：
 ```python
 class UnionFind:
@@ -156,6 +161,30 @@ int main() {
   printf("%d\n",uf.same(0, 1)); // 0
   uf.merge(0, 1);
   printf("%d\n",uf.same(0, 1)); // 1
+  return 0;
+}
+```
+
+# 1からnumまでの和
+
+**重要度 90**
+
+*タグ:数字,公式*
+
+pythonのコード:
+```python
+num = 10
+ans = num*(num+1)//2
+print(ans) # 55
+```
+
+C++のコード：
+```cpp
+#include <iostream>
+int main() {
+  int num = 10;
+  int ans = num*(num+1)/2;
+  printf("%d\n",ans); // 55
   return 0;
 }
 ```
