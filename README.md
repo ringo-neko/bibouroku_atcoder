@@ -127,7 +127,7 @@ int main() {
 
 くっつけたりできるやつ。
 pythonのコード：
-```
+```python
 class UnionFind:
     def __init__(self, n):
         self.parent = list(range(n))
@@ -162,7 +162,7 @@ class UnionFind:
 ```
 ***C++のコード(ATCODERでしか使えない)***
 C++のコード：
-```
+```cpp
 #include <iostream>
 #include "atcoder/dsu.hpp"
 int main() {
