@@ -275,3 +275,42 @@ int main() {
     return 0;
 }
 ```
+
+# dijkstra法
+
+~~何なんだよこのスペル~~
+
+迷路とかをコスト含んでできる方法です。
+
+pythonのコード：
+```python
+class dijkstra():
+  def __init__(self, ways:list):
+    self.ways=ways
+  def calc(self, startpos=0):
+    import heapq
+    h = [(0, startpos)]
+    distance = [float('inf')] * len(self.ways)
+    distance[startpos] = 0
+    while h:
+      dist, pos = heapq.heappop(h)
+      if dist > distance[pos]:
+        continue
+      for neighbor, weight in self.ways[pos]:
+        if distance[pos] + weight < distance[neighbor]:
+          distance[neighbor] = distance[pos] + weight
+          heapq.heappush(h, (distance[neighbor], neighbor))
+    return distance
+d = dijkstra([ 
+ [[1, 10], [2, 3]],
+ [[0, 10], [3, 2]],
+ [[0, 3], [1, 4], [3, 8], [4, 2]],
+ [[1, 2], [2, 8], [4, 7]],
+ [[2, 2], [3, 7]]
+])
+print(d.calc())
+```
+C++のコード：
+```cpp
+/*未完成*/
+```
