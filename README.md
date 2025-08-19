@@ -200,7 +200,7 @@ class bfs():
     """
     self.ways=ways
     self.cantcross=cantcross
-  def bfs(self, startfrom=0):
+  def calc(self, startfrom=0):
     from collections import deque
     distance = [self.cantcross for i in range(len(self.ways))]
     distance[startfrom]=0
