@@ -203,19 +203,18 @@ class bfs():
   def calc(self, startfrom=0):
     from collections import deque
     distance = [self.cantcross for i in range(len(self.ways))]
+    #最初を0にする
     distance[startfrom]=0
+    #初期地点をqueueに入れる
     queue = deque([startfrom])
     while len(queue)!=0:
+      #左から取り出す
       value=queue.popleft()
       for i in self.ways[value]:
+        #代入。
         if distance[i] is None:
           distance[i]=distance[value]+1
           queue.append(i)
-        else:
-          gocost=distance[value]+1
-          if distance[i]>gocost:
-            distance[i]=gocost
-            queue.append(i)
     return distance
 b=bfs([[1, 2], [0], [0, 3], [2], [5, 4], [4, 6], [5]])
 print(b.bfs())
