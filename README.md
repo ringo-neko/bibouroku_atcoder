@@ -212,7 +212,7 @@ class bfs():
       value=queue.popleft()
       for i in self.ways[value]:
         #代入。
-        if distance[i] is None:
+        if distance[i] is self.cantcross:
           distance[i]=distance[value]+1
           queue.append(i)
     return distance
