@@ -343,9 +343,28 @@ composition : 遅延演算その二。遅延演算同士で何に更新するか
 
 ~~まーーじでわかんなかった。~~
 
-pythonのコード:
+***pythonのコード(ATCODERでしか使えない)***:
 ```python
-# writing! #
+from atcoder.lazysegtree import LazySegTree
+def op(x, y):
+    # x, y は (sum, length) のタプル
+    return (x[0] + y[0], x[1] + y[1])
+def e():
+    return (0, 0)
+def mapping(f, x):
+    return (x[0] + f * x[1], x[1])
+def composition(f, g):
+    return f + g
+def idn():
+    return 0
+
+a = [(v, 1) for v in [1, 2, 3, 4, 5]]
+
+seg = LazySegTree(op, e(), mapping, composition, idn(), a)
+
+print(seg.prod(0, 3)[0]) #6
+seg.apply(0, 3, 10)
+print(seg.prod(0, 3)[0]) #36
 ```
 C++のコード:
 ```cpp
