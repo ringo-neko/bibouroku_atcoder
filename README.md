@@ -185,6 +185,32 @@ int main() {
 }
 ```
 
+# 等差数列の和
+
+*重要度 80*
+
+S<sub>n</sub> = (a<sub>1</sub> + a<sub>n</sub>) * (n / 2)
+
+pythonのコード:
+```python
+a=[1, 4, 7, 10, 13]
+n=4
+#                     v 0-indexedから1-indexedに変換
+ans=int((a[0]+a[n])*(n+1)/2)
+print(ans) # 35
+```
+C++のコード:
+```cpp
+#include <iostream>
+int main() {
+  int a[5]={1, 4, 7, 10, 13};
+  int n = 4;//           v 0-indexedから1-indexedに変換
+  int ans = (a[0]+a[n])*(n+1)/2;
+  printf("%d\n",ans); // 35
+  return 0;
+}
+```
+
 # bfs
 
 ***重要度 100***
