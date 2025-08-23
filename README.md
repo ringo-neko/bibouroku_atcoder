@@ -222,7 +222,7 @@ int main() {
 
 pythonのコード:
 ```python
-class bfs():
+class bfs:
   def __init__(self, ways:list, cantcross=None):
     """
     cantcross changes like -1, None(default), ".", "#"
@@ -317,7 +317,7 @@ int main() {
 
 pythonのコード：
 ```python
-class dijkstra():
+class dijkstra:
   def __init__(self, ways:list):
     self.ways=ways
   def calc(self, startpos=0):
@@ -398,6 +398,46 @@ print(seg.prod(0, 3)[0]) #36
 C++のコード:
 ```cpp
 /* 気が向いたら翻訳する */
+```
+
+# *累積和*
+
+***重要度 100***
+
+*タグ:グリッド,二次元,足し合わせる*
+
+pythonのコード:
+```python
+class Prefix2DSum:
+    def __init__(self, board):
+        self.board = board
+        self.h = len(board)
+        self.w = len(board[0])
+        self.update()
+
+    def update(self):
+        self.pboard = [[0] * (self.w + 1) for _ in range(self.h + 1)]
+        for i in range(self.h):
+            for j in range(self.w):
+                self.pboard[i+1][j+1] = (
+                    self.board[i][j]
+                    + self.pboard[i][j+1]
+                    + self.pboard[i+1][j]
+                    - self.pboard[i][j]
+                )
+
+    def getarea(self, sx, sy, ex, ey):
+        return (
+            self.pboard[ey][ex]
+            - self.pboard[sy][ex]
+            - self.pboard[ey][sx]
+            + self.pboard[sy][sx]
+        )
+```
+
+C++のコード:
+```cpp
+/*気が向いたら翻訳する*/
 ```
 
 # 章2 考え方(コードなし)
