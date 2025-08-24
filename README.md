@@ -246,7 +246,7 @@ class bfs:
           queue.append(i)
     return distance
 b=bfs([[1, 2], [0], [0, 3], [2], [5, 4], [4, 6], [5]])
-print(b.bfs())
+print(b.calc())
 ```
 
 C++のコード
