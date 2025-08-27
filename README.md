@@ -78,7 +78,7 @@ import bisect
 def search(array,num):
   return bisect.bisect(array,num)
 # --- Example --- #
-print(search([0, 1, 3, 5], 4)))
+print(search([0, 1, 3, 5], 4))
 ```
 C++のコード(vector)：
 ```cpp
