@@ -150,8 +150,16 @@ class UnionFind:
             groups[self.find(i)].append(i)
         return "\n".join(map(str, groups.values())) + f"\n{self.groupsnum} groups found."
 ```
+***速報！！！！pythonにもdsuがあった！！！！ pythonのコード(atcoderでしか使えない)：***
+```python
+from atcoder.dsu import DSU
+
+uf=DSU(2)
+
+print(uf.same(0,1)) #False
+uf.merge(0, 1)
+print(uf.same(0,1)) #True
 ***C++のコード(ATCODERでしか使えない)***
-C++のコード：
 ```cpp
 #include <iostream>
 #include "atcoder/dsu.hpp"
