@@ -448,11 +448,28 @@ pythonだけ。c++にもあるのかな？
 
 pythonのコード：
 ```python
-#Writing...
+#リストだと
+list1=[0, 1, 2]
+#追加
+list1.append(6)
+#削除
+#bisect使ったほうが早いけど
+del list1[list1.index(2)]
+
+
+#sortedcontainers.SortedListだと
+import sortedcontainers
+scs = sortedcontainers.SortedList([0, 1, 2])
+#ここで制限を変える。大きいリストだとその分大きい数にする。初期値は1000
+scs._reset(3)
+#追加
+scs.add(6)
+#削除
+scs.discard(2)
 ```
 C++のコード：
 ```cpp
-/*Writing...*/
+/*どうやって作るのかわからん*/
 ```
 # 章2 考え方(コードなし)
 
