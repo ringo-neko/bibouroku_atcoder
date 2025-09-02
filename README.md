@@ -159,6 +159,7 @@ uf=DSU(2)
 print(uf.same(0,1)) #False
 uf.merge(0, 1)
 print(uf.same(0,1)) #True
+```
 ***C++のコード(ATCODERでしか使えない)***
 ```cpp
 #include <iostream>
