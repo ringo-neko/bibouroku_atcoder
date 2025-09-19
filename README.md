@@ -493,6 +493,45 @@ C++のコード：
 ```cpp
 /*どうやって作るのかわからん*/
 ```
+
+# 進数変換
+
+***10進数以下しか使えません。***
+
+int型をlistにする。具体的には
+
+13(10) => 1101(2)
+
+にするコード
+
+pythonのコード：
+```python
+#https://qiita.com/omakasessan/items/4a908da8e3fc7e151d0eのコードを丸パクリしてます。ごめんなさい
+
+def base_n_to_10(n, string):
+  string = string[::-1]
+  n10 = 0
+  for digit in range(len(string)):
+    if int(string[digit]) >= n:
+      print(f"{n} 以上の数字が混ざっています", end=" ")
+      return "error."
+    n10 += n ** digit * int(string[digit])
+  return n10
+
+def base_10_to_n(n, num):
+  n_str = ""
+  while (num >= n):
+    n_str += str(num % n)
+    num //= n
+  n_str += str(num)
+  n_str = n_str[::-1]
+  return n_str
+```
+C++のコード：
+```cpp
+/*気がry*/
+```
+
 # 章2 考え方(コードなし)
 
 # 2次元を1次元にして考える
