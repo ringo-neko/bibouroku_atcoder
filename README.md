@@ -562,3 +562,11 @@ C++のコード：
 その他にも使い道はたくさん
 
 例題: [abc129_d](https://atcoder.jp/contests/abc129/tasks/abc129_d) [abc149_c](https://atcoder.jp/contests/abc419/tasks/abc419_c)
+
+# 逆にして考える
+
+迷路を逆から解くみたいな感じ
+
+終点はここでそこにたどり着けるマス数とかを
+
+終点を始点にして考えてあとはdfsでいける
