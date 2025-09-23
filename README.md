@@ -75,6 +75,18 @@ int main() {
 }
 ```
 
+# heapq
+
+***重要度 100***
+
+*タグ:リスト,追加,削除,消す,二分探索*
+
+ソートされた状態で数値しか扱えないリスト。
+追加 => heapq.heappush(list, n)
+最小値をn個 => heapq.nsmallest(n, list)
+最大値をn個 => heapq.nlargest(n, list)
+最小値を取り出す => heapq.heappop(list, n)
+
 # 二分探索法
 
 **重要度 80**
