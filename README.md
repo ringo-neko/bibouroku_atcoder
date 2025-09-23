@@ -82,10 +82,23 @@ int main() {
 *タグ:リスト,追加,削除,消す,二分探索*
 
 ソートされた状態で数値しか扱えないリスト。
+
 追加 => heapq.heappush(list, n)
+
 最小値をn個 => heapq.nsmallest(n, list)
+
 最大値をn個 => heapq.nlargest(n, list)
-最小値を取り出す => heapq.heappop(list, n)
+
+最小値を取り出す => heapq.heappop(list)
+
+pythonのコード：
+```python
+import heapq
+l=[0, 2, 3]
+print(heapq.heappop(l)) # 0
+heapq.heappush(l, 10)
+print(heapq.nlargest(3, l)) # [10, 3, 2]
+```
 
 # 二分探索法
 
