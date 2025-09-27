@@ -1,4 +1,4 @@
-aa# bibouroku_atcoder
+# bibouroku_atcoder
 自分の備忘録。atcoderで使えるやつをreadmeにまとめる
 
 # コピペ一覧
