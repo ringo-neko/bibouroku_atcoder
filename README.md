@@ -516,8 +516,8 @@ using namespace std;
 int main() {
   int ax,ay,bx,by,cx,cy;
   cin >> ax >> ay >> bx >> by >> cx >> cy;
-  ans = ax*(by-cy)+bx*(cy-ay)+cx*(ay-by)
-  printf("%d\n", ans)
+  ans = ax*(by-cy)+bx*(cy-ay)+cx*(ay-by);
+  printf("%d\n", ans);
   return 0;
 }
 ```
