@@ -495,6 +495,34 @@ C++のコード：
 /*気がry*/
 ```
 
+# 三角形の面積
+
+*重要度 80*
+
+*タグ:一直線,三角,triangle,面積,形,形状*
+
+名前でもう分かるでしょう。
+
+pythonのコード：
+```py
+ax,ay,bx,by,cx,cy = map(int, input().split())
+ans = ax*(by-cy)+bx*(cy-ay)+cx*(ay-by)
+print(ans)
+```
+C++のコード：
+```cpp
+#include <iostream>
+using namespace std;
+int main() {
+  int ax,ay,bx,by,cx,cy;
+  cin >> ax >> ay >> bx >> by >> cx >> cy;
+  ans = ax*(by-cy)+bx*(cy-ay)+cx*(ay-by)
+  printf("%d\n", ans)
+  return 0;
+}
+```
+(私の提出コード)[https://atcoder.jp/contests/abc224/submissions/69957372]
+
 # 章2 考え方(コードなし)
 
 # 2次元を1次元にして考える
