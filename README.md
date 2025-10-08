@@ -521,7 +521,7 @@ int main() {
   return 0;
 }
 ```
-(私の提出コード)[https://atcoder.jp/contests/abc224/submissions/69957372]
+[これを使ったコード](https://atcoder.jp/contests/abc224/submissions/69957592)
 
 # 章2 考え方(コードなし)
 
