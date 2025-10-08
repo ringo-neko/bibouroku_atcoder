@@ -521,7 +521,10 @@ int main() {
   return 0;
 }
 ```
-[これを使ったコード](https://atcoder.jp/contests/abc224/submissions/69957592)
+[これをつかった問題](https://atcoder.jp/contests/abc224/tasks)
+[その答え 自分](https://atcoder.jp/contests/abc224/submissions/69957592)
+[その答え　解説](https://atcoder.jp/contests/abc224/editorial/2810)
+
 
 # 章2 考え方(コードなし)
 
